@@ -5,6 +5,7 @@
     width: 27%;
     margin-top: 24px;
     min-height: 348px;
+    z-index: -500;
 }
 
 .secondary.dark{
@@ -15,11 +16,13 @@
     color: #030303;
 }
 
-.dismissible:not(:first-child) .menu-popup {
-    display: none;
+.dismissible{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
 }
 
-.dismissible:first-child .menu-popup {
+.menu-popup {
     position: fixed;
     min-height: 321px;
     min-width: 253.961px;
@@ -32,15 +35,8 @@
     padding: 8px 0;
     display: flex;
     flex-direction: column;
-    justify-items: flex-start;
-    column-gap: 10px;
+    justify-content: space-between;
     z-index: 1;
-}
-
-.dismissible{
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: flex-start;
 }
 
 .ytd-thumbnail {
@@ -87,26 +83,43 @@
     display: none;
 }
 
-.menu-popup div {
-    margin-left: 20px;
-}
-
 .menu-popup.dark {
     background-color: #717171;
 }
 
-.menu-popup-icon {
-    height: 24px;
-    width: 24px;
-    float: left;
+.menu-popup-container {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
 }
 
-.menu-popup-p {
+.menu-popup-container:hover {
+    background-color:#717171;
+}
+
+.menu-popup-container:nth-child(5){
+    margin-bottom: 15px;
+}
+
+.menu-popup-container:nth-child(5)::after{
+    content:"";
     display: block;
-    float: left;
-    height: 100%;
-    margin: 0;
-    color: red;
+    position: absolute;
+    height: 0;
+    width: 100%;
+    left: 0;
+    bottom: 130px;
+    border: .25px solid gray;
+}
+
+.menu-popup svg {
+    height: 24px;
+    width: 24px;
+    margin-left: 15px;
 }
 
 .metadata-line p, .user_name {
@@ -119,19 +132,22 @@
 }
 
 .menu-popup-btn {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    float: right;
     height: 24px;
     width: 24px;
-    vertical-align: middle;
     outline: none;
     background: none;
     margin: 0;
-    border: none;
     padding: 0;
-    width: 24px;
-    height: 24px;
+    border: none;
     line-height: 0;
     cursor: pointer;
 }
+
 
 .three-dots {
     width: 100%; 
