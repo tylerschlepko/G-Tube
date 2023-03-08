@@ -1,6 +1,6 @@
-const MenuPopup = ({isOpen}) => {
+const MenuPopup = () => {
   return (
-    <div className={isOpen ? "menu-popup" : "hidden"}>
+    <div className="menu-popup">
       <div>
         <div className="menu-popup-icon">
           <svg
