@@ -7,8 +7,6 @@ export const MetubeProvider =({children}) =>{
     const [commentsOrdered,setCommentsOrdered] = useState([])
     const [video, setVideo] = useState(null)
     const [commentsLiked, setCommentsLiked] = useState(null)
-    const [videos, setVideos] = useState([])
-
     useEffect(()=>{
         fetch('http://localhost:3001/Users')
         .then((response)=> response.json())
@@ -38,7 +36,7 @@ export const MetubeProvider =({children}) =>{
     fetch('http://localhost:3001/Videos')
       .then((response) => response.json()) // Add parentheses after .json
       .then((data) => {
-        setVideos(data);
+        setVideo(data);
       })
       .catch((error) => {
         console.error(error);
@@ -53,9 +51,7 @@ export const MetubeProvider =({children}) =>{
             commentsLiked,
             setCommentsLiked,
             video,
-            setVideo,
-            videos,
-            setVideos
+            setVideo
         }}>
             {children}
         </MetubeContext.Provider>

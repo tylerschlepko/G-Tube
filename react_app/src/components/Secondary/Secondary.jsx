@@ -20,7 +20,7 @@ const Secondary = () => {
             title={video.title}
             username={video.username}
             runtime={video.runtime}
-            thumbnail={video.thumbnail}
+            video_link={video.video_link}
             views={video.views}
           />
         ))}
