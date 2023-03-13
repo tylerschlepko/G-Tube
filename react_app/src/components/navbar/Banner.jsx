@@ -28,10 +28,16 @@ import {
   faTv,
   faBabyCarriage,
 } from "@fortawesome/free-solid-svg-icons";
-import tutuge from "./tutuge.png";
+import { Link } from "react-router-dom";
+import darkTheme from "./space_logo_white.png";
+import lightTheme from './space_logo_black.png'
+import { useContext } from "react";
+import MetubeContext from "../../context/MetubeContext";
 
 function Banner() {
+  const {theme} = useContext(MetubeContext) 
   const [isOpen, setIsOpen] = useState(false);
+  const currLogo = theme.apperance === 'Dark Theme' ? darkTheme : lightTheme
 
   function toggleNavbar() {
     setIsOpen(!isOpen);
@@ -39,32 +45,47 @@ function Banner() {
   return (
     <div>
       <div className="logo-container">
-        <div className="rounded-button" onClick={toggleNavbar}>
+        <div className="rounded-button" onClick={toggleNavbar} style={{'margin-left': '10px'}}>
           <FontAwesomeIcon className="icon" icon={faBars} />
         </div>
+<<<<<<< HEAD
         <a>
           <img src={tutuge} alt="" className="tutuge"></img>
         </a>
       </div>
       <div className={`navbar-menu ${isOpen ? "open" : ""}`}>
         <div className="logo-container">
+=======
+        <Link to='/' style={{'margin-left': '25px'}}><a>
+          <img src={currLogo} alt="" className="tutuge" ></img>
+        </a></Link>
+      </div>
+      <div className={` navbar-menu ${isOpen ? "open" : ""}`}>
+        <div className="logo-container" style={{'margin-top': '1px', 'padding-bottom': '0px'}}>
+>>>>>>> Developer_Branch
           <div
-            style={{ padding: "0" }}
+            style={{ 'padding': "0", 'margin-left': '14px', 'margin-right': '0' }}
             className="rounded-button"
             onClick={toggleNavbar}
           >
             <FontAwesomeIcon className="icon" icon={faBars} />
           </div>
+<<<<<<< HEAD
           <a style={{ padding: "0", "margin-left": "0" }}>
             <img src={tutuge} alt="" className="tutuge"></img>
           </a>
+=======
+          <Link to='/' style={{'padding': 0}} ><a style={{ 'padding': "0", "padding-left": "0", 'margin-top': '0', 'padding-left': '0px' }}>
+            <img src={currLogo} alt="" className="tutuge"></img>
+          </a></Link>
+>>>>>>> Developer_Branch
         </div>
         <div className="scrollable">
           <ul>
-            <li>
+          <Link to='/' style={{'padding': '0'}}><li style={{'margin-left': '6px', 'padding-bottom': '0'}}>
               <FontAwesomeIcon className="icon" icon={faHome} />
               <a>Home</a>
-            </li>
+            </li></Link>
             <li>
               <FontAwesomeIcon className="icon" icon={faFilm} />
               <a>Shorts</a>
@@ -83,7 +104,7 @@ function Banner() {
               <a>History</a>
             </li>
             <hr className="dropdown-divider" />
-            <p style={{ "margin-left": "30px", color: "white" }}>
+            <p style={{ "margin-left": "30px", color: "var(--text)" }}>
               Sign in to like videos, comment, and subscribe.
             </p>
             <div className="oval-button" style={{ "margin-left": "30px" }}>
@@ -94,7 +115,11 @@ function Banner() {
               <p style={{ color: "#1e90ff" }}>Sign In</p>
             </div>
             <hr className="dropdown-divider" />
+<<<<<<< HEAD
             <h4 style={{ "margin-left": "25px", color: "white" }}>Explore</h4>
+=======
+            <h4 style={{ "margin-left": "25px", 'color': "var(--text)" }}>Explore</h4>
+>>>>>>> Developer_Branch
             <li>
               <FontAwesomeIcon className="icon" icon={faFire} />
               <a>Trending</a>
@@ -145,24 +170,24 @@ function Banner() {
               <a>Browse channels</a>
             </li>
             <hr className="dropdown-divider" />
-            <h4 style={{ "margin-left": "25px", color: "white" }}>
-              More from Tutuge
+            <h4 style={{ "margin-left": "25px", color: "var(--text)" }}>
+              More from G-Tube
             </h4>
             <li>
               <FontAwesomeIcon className="icon" icon={faPlus} />
-              <a>Tutuge Premium</a>
+              <a>G-Tube Premium</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faMusic} />
-              <a>Tutuge Music</a>
+              <a>G-Tube Music</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faBabyCarriage} />
-              <a>Tutuge Kids</a>
+              <a>G-Tube Kids</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faTv} />
-              <a>Tutuge TV</a>
+              <a>G-Tube TV</a>
             </li>
             <hr className="dropdown-divider" />
             <li>
@@ -182,7 +207,11 @@ function Banner() {
               <a>Send Feedback</a>
             </li>
             <hr className="dropdown-divider" />
+<<<<<<< HEAD
             <p>Garret</p>
+=======
+            <a style={{'color':'var(--bg)'}}>Garret</a>
+>>>>>>> Developer_Branch
           </ul>
         </div>
       </div>

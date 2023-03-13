@@ -7,11 +7,15 @@
 }
 
 .title {
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(249, 249, 249);
+    /* background-color: rgba(255, 255, 255, 0); */
+    color: var(--text);
     /* border: rgb(223, 187, 187) 1px solid; */
+<<<<<<< HEAD
     justify-content: left;
     width: 1059px;
+=======
+    width: 100%;
+>>>>>>> Developer_Branch
     font-size: 2rem;
     font-weight: 700;
     white-space: normal;
@@ -24,9 +28,11 @@
 
 .top-row {
     display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 .creator {
-    background-color: rgba(55, 58, 58, 0.687);
+    /* background-color: rgba(55, 58, 58, 0.687); */
     display: block;
     width: 50px;
     height: 50px;
@@ -35,7 +41,7 @@
 
 #channel-name {
    margin-left: 10px;
-   color:rgb(249, 249, 249);
+   color:var(--text);
    font-size: 1rem;
    font-weight: 700;
 }
@@ -47,6 +53,8 @@
 
 .sub-btn {
     margin-left: 25px;
+    background-color: var(--description-box);;
+    color: var(--text);
 }
 
 /* .dot-btn,
@@ -67,19 +75,73 @@
 .download,
 .share {
     margin-left: auto;
-    color:rgb(255, 255, 255);
+    color:var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
 }
 
+=======
+    cursor: pointer;
+    
+}
+
+
+.sub-btn:hover {
+  background-color: #d4d4d4;
+}
+
+.sub-btn:active {
+  transform: scale(0.98);
+}
+
+.dot-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--description-box);;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  color:var(--text);
+  font-weight: 700;
+  font-size: larger;
+}
+
+
+
+.text {
+  margin-left: 10px;
+}
+
+.download, .share {
+  /* display: inline-block; */
+  background-color: var(--description-box);
+  border: none;
+  color: var(--text);
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 1rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.download:hover, .share:hover, .dot-btn:hover, .like:hover, .dislike:hover, .description:hover {
+  background-color: rgba(128, 128, 128, 0.8);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+>>>>>>> Developer_Branch
 .sub-btn {
     font-size: 1rem;
     font-weight: 500;
     padding: 0.4rem 1.2rem;
     border-radius: 2rem;
-    background-color: #fffdfd;
-    color: #000000;
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
@@ -139,4 +201,65 @@
     display: inline-block;
     margin-left: 5px;
   }
+<<<<<<< HEAD
   
+=======
+  
+
+  .like {
+    background-color: var(--description-box);
+    border-radius: 25px 0% 0% 25px;
+    width: 110px;
+    margin-right: -1px;
+    border-right:  2.5px solid rgba(180, 180, 180, .5);
+  }
+
+  .dislike {
+    background-color: var(--description-box);
+    padding: 15px;
+    border-radius: 0% 50% 50% 0%;
+    margin-right: 1rem;
+  }
+
+  .right-buttons {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .description {
+    width: 100%;
+    height: 25vmin;
+    max-height: auto; 
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    background-color: var(--description-box);
+    border-radius: 25px;
+  }
+
+  .description-text {
+    display: flex;
+    color: var(--text);
+    margin-left: 1rem;
+    font-size: medium;
+    
+  }
+
+  .description-meta {
+    display: flex;
+    color: var(--text);
+    font-size: medium;
+    font-weight: 800;
+    margin-left: .75rem;
+    margin-top: .75rem;
+  }
+
+  #desc-date {
+    padding-left: 5px;
+  }
+
+  
+>>>>>>> Developer_Branch

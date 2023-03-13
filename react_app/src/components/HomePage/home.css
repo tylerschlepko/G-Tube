@@ -1,0 +1,102 @@
+
+.carousel-container{
+    position: fixed;
+    top: 51px;
+    left: 65px;
+    right: 0px;
+    padding-left: 30px;
+    padding-right: 20px;
+    height: fit-content;
+    padding-top: 6px;
+    background-color: var(--bg);
+}
+
+.carousel-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--carousel-unselected);
+    color: var(--text);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px 15px;
+    font-size: 16px;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin: 10px;
+    font-weight: 450;
+  }
+  
+  .carousel-cell:hover {
+    background-color: var(--carousel-unselected-hover);
+    color: var(--text);
+  }
+  
+  .side-bar{
+    padding-top: 10px;
+    position: fixed; 
+    font-size: x-small;
+    top: 50px; 
+    left: 7px; 
+    height: 100%; 
+    width: 60px; 
+    background-color: var(--bg);
+    color: var(--text);
+  }
+
+  .side-bar-icon { 
+    height: 70px; 
+    width: 60px; 
+    background-color: var(--bg);
+    border-radius: 10px;
+    display: flex;
+    justify-items: center;
+    justify-content: end;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  .icon-side{
+    stroke: var(--text);
+    stroke-width: 20px;
+    width: 22px;
+    height: fit-content;
+    color: var(--bg);
+    padding-bottom: 8px;
+  }
+  .icon-side-selected{
+    width: 22px;
+    height: fit-content;
+    color: var(--carousel-selected);
+    padding-bottom: 8px;
+  }
+
+  .side-bar-icon:hover {
+    background-color: var(--carousel-unselected-hover);
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .selected{
+    background-color: var(--carousel-selected);
+    color: var(--bg);
+  }
+
+  .selected:hover{
+    background-color: var(--carousel-selected);
+    color: var(--bg);
+    cursor: pointer;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg);
+  }

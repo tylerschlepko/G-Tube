@@ -1,41 +1,108 @@
 import Thumbnail from "./Thumbnail.jsx";
 import MenuPopup from "./MenuPopup.jsx";
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
+=======
+import { useState, useEffect, useContext } from "react";
+>>>>>>> Developer_Branch
 import { DateTime } from "luxon";
+import MetubeContext from "../../context/MetubeContext.js";
 
 const Dismissible = ({
+<<<<<<< HEAD
   video_link,
+=======
+  id,
+  thumbnail,
+>>>>>>> Developer_Branch
   username,
   title,
   views,
   date_published,
   runtime,
+<<<<<<< HEAD
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(false);
   }, []);
+=======
+  isPopup,
+  setIsPopup
+}) => {
+
+  const [menuPopupIsOpen, setMenuPopupIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const [isFlipped, setIsFlipped] = useState(false)
+
+  const {queue, setQueue} = useContext(MetubeContext)
+  const {showQueue, setShowQueue} = useContext(MetubeContext)
+
+  window.addEventListener("click",(event)=>{
+    if(event.target.className !== "menu-popup-btn"){
+      setMenuPopupIsOpen(false)
+      setIsPopup(false)
+      setIsVisible(false)
+      setIsFlipped(false)
+    }
+  })
+  
+  const handleMouseLeave = () => {
+    menuPopupIsOpen ? setIsVisible(true) : setIsVisible(false);
+
+  }
+>>>>>>> Developer_Branch
 
   const handleMouseEnter = () => {
-    setIsVisible(true);
-  };
+    if(isPopup === false){
+      setIsVisible(true)
+    }
+  }
 
-  const handleMouseLeave = () => {
-    setIsVisible(false);
-  };
-
+<<<<<<< HEAD
   const handleClick = () => {};
+=======
+  const handleClick = (event) => {
+    setMenuPopupIsOpen(!menuPopupIsOpen)
+    setIsPopup(!isPopup)
+    const mid = window.innerHeight/2
+    // setMid(window.innerHeight/2)
+    event.clientY > mid ? setIsFlipped(true) : setIsFlipped(false)
+  }
+
+  const addToQueue = () => {
+    let video_id = id
+    if( (queue.filter(obj => obj.id === video_id)).length === 0  ){
+      setQueue([
+        { id: id,
+          thumbnail: thumbnail,
+         runtime: runtime,
+         title: title,
+         username: username
+        }, ...queue
+      ])
+    } 
+  }
+
+>>>>>>> Developer_Branch
   return (
     <div
       className="dismissible"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+<<<<<<< HEAD
       <Thumbnail video_link={video_link} runtime={runtime} />
+=======
+      <Thumbnail thumbnail={thumbnail} runtime={runtime} addToQueue={addToQueue} />
+>>>>>>> Developer_Branch
       <div className="details">
         <p className="video-title">{title}</p>
-        <div className="user_name">{username}</div>
+        <div className="user_name">
+            <p>{`${username}`}</p>
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false"><g><path d="M12,2C6.5,2,2,6.5,2,12c0,5.5,4.5,10,10,10s10-4.5,10-10C22,6.5,17.5,2,12,2z M9.8,17.3l-4.2-4.1L7,11.8l2.8,2.7L17,7.4 l1.4,1.4L9.8,17.3z"></path></g></svg>
+          </div>
         <div className="metadata-line">
           <p>{views >= 1000 ? `${views / 1000}K` : views} views</p>
           <p> · </p>
@@ -55,7 +122,11 @@ const Dismissible = ({
           </g>
         </svg>
       </button>
+<<<<<<< HEAD
       <MenuPopup />
+=======
+      <MenuPopup isOpen={menuPopupIsOpen} isFlipped={isFlipped} addToQueue={addToQueue} />
+>>>>>>> Developer_Branch
     </div>
   );
 };

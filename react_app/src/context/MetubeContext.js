@@ -7,6 +7,26 @@ export const MetubeProvider =({children}) =>{
     const [commentsOrdered,setCommentsOrdered] = useState([])
     const [video, setVideo] = useState(null)
     const [commentsLiked, setCommentsLiked] = useState(null)
+<<<<<<< HEAD
+=======
+    const [videos, setVideos] = useState([])
+    const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
+    const [user, setUser] = useState(null)
+    const [queue, setQueue] = useState([])
+    const [showQueue, setShowQueue] = useState(false)
+    useEffect( ()=>{
+      setQueue([])
+    },[])
+
+    //fetch video 1 from database
+
+    useEffect(()=> {
+      fetch('http://localhost:3001/Videos/1')
+        .then((response) => response.json())
+        .then((data) => setUser(data))
+    }, [])
+
+>>>>>>> Developer_Branch
     useEffect(()=>{
         fetch('http://localhost:3001/Users')
         .then((response)=> response.json())
@@ -32,6 +52,7 @@ export const MetubeProvider =({children}) =>{
         setCommentsLiked(sortedComments);
       });
   }, []);
+// fetch for all videos and metadata
   useEffect(() => {
     fetch('http://localhost:3001/Videos')
       .then((response) => response.json()) // Add parentheses after .json
@@ -51,7 +72,22 @@ export const MetubeProvider =({children}) =>{
             commentsLiked,
             setCommentsLiked,
             video,
+<<<<<<< HEAD
             setVideo
+=======
+            setVideo,
+            videos,
+            setVideos,
+            user,
+            setUser,
+            theme,
+            setTheme,
+            queue,
+            setQueue,
+            showQueue, 
+            setShowQueue
+
+>>>>>>> Developer_Branch
         }}>
             {children}
         </MetubeContext.Provider>
