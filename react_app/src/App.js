@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-
-import Navbar from "./components/navbar/Navbar";
-import Secondary from "./components/Secondary/Secondary";
-import { MetubeProvider } from "./context/MetubeContext";
-import Video from "./components/video_component/Video";
-import Details from "./components/details/Details";
-function App() {
-  return (
-    <>
-      <MetubeProvider>
-        <Navbar />
-        <Video />
-        <Details />
-        {/* <Secondary /> */}
-      </MetubeProvider>
-    </>
-  );
-}
-
-export default App;
-
-=======
 import { useContext, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Queue from './components/Secondary/QueueComp/Queue';
@@ -48,4 +25,3 @@ function App() {
 }
 
 export default App;
->>>>>>> Developer_Branch
