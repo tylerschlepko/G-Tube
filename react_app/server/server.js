@@ -120,7 +120,6 @@ const cors = require("cors");
 const { Pool } = require("pg");
 const app = express();
 const dotenv = require("dotenv");
-const path = require('path')
 dotenv.config();
 
 //starting this don't not to forget to migrate your table.sql
@@ -132,9 +131,6 @@ app.use(express.json());
 
 // Middleware to enable CORS
 app.use(cors());
-
-
-// app.use(express.static(path.join(__dirname, '../build')))
 
 // Create a connection pool to the database
 
@@ -164,8 +160,8 @@ const connectionString = process.env.DATABASE_URL
 // });
 >>>>>>> Developer_Branch
 
-const connectionString = process.env.DATABASE_URL
-// const connectionString = 'postgresql://fatbo@localhost:5432/youtube'
+// const connectionString = process.env.DATABASE_URL
+const connectionString = 'postgresql://fatbo@localhost:5432/youtube'
 
 
 const pool = new Pool({
@@ -177,15 +173,6 @@ const pool = new Pool({
 });
 
 const PORT = process.env.PORT || 3001;
-
-// app.get('/', (req,res)=>{
-//   try {
-//     res.sendFile(path.join(__dirname, '../public/index.html'))
-    
-//   } catch (error) {
-//     console.log(error);
-//   }
-// })
 
 // API endpoint to retrieve a simple JSON object
 app.get("/testApi", async (req, res) => {
